@@ -2,6 +2,10 @@
 
 const express = require('express');
 const path = require('path');
+const apiRoutes = require ('./routes/apiRoutes.js')
+const htmlRoutes = require ('./routes/htmlRoutes.js')
+
+
 
 // Sets up the Express App
 
@@ -12,13 +16,15 @@ const PORT = 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use(express.static('public'));
+app.use('/api', apiRoutes);
+app.use('/', htmlRoutes);
+
 
 // Routes
 
 // Basic route that sends the user first to the AJAX Page
-app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'view.html')));
 
-app.get('/add', (req, res) => res.sendFile(path.join(__dirname, 'add.html')));
 
 // Displays all characters
 app.get('/api/characters', (req, res) => res.json(characters));
