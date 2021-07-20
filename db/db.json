@@ -1,6 +1,13 @@
-[
+{
+  "notes": [
     {
-        "title":"Test Title",
-        "text":"Test text"
+      "title": "Test Title",
+      "text": "Test text"
+    },
+    {
+      "title": "Henrys day",
+      "text": "notes",
+      "id": "1nnxx4b67krcahhe1"
     }
-]
+  ]
+}
